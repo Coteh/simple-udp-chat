@@ -143,7 +143,7 @@ void Client::SendMessage(char _cmd, std::string _message){
 }
 
 void Client::ReceiveMessage(std::string _incomingMessage){
-	//May do some decrypting here in a bit
+	//Making sure there isn't a newline at the end
 	_incomingMessage[numbytes] = '\0';
 	//we will be splitting the incoming message by delimiter
 	std::istringstream iss(_incomingMessage);
