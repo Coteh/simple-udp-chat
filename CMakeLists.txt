@@ -18,6 +18,9 @@ else()
 endif()
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 
+# other compiler flags
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic")
+
 include_directories(${${appName}_SOURCE_DIR}/Shared/include)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "Shared/lib/")
 add_library(${appName}_shared_stuff SHARED Shared/src/cipher.cpp)

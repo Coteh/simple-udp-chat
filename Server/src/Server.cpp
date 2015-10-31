@@ -121,7 +121,7 @@ void Server::HandleMessage(){
 		BroadcastMessageToAll(decryptedStr);
 	}else if (code == '2'){ //client is logging out
 		printf("Client left.\n");
-		for (int i = 0; i < clientsVec.size(); i++){
+		for (size_t i = 0; i < clientsVec.size(); i++){
 			if(CompareClients(&clientsVec[i], (struct sockaddr *)&remoteaddr)){
 				printf("Going to erase\n");
 				clientsVec.erase(clientsVec.begin() + i);
@@ -142,7 +142,7 @@ void Server::BroadcastMessage(std::string _message, struct sockaddr* _destinatio
 }
 
 void Server::BroadcastMessageToAll(std::string _message){
-	for (int i = 0; i < clientsVec.size(); i++){
+	for (size_t i = 0; i < clientsVec.size(); i++){
 		//disable the if check if you want to test on localhost
 		// if(!CompareClients(&clientsVec[i], (struct sockaddr *)&remoteaddr)){
 			BroadcastMessage(_message, &clientsVec[i]);
