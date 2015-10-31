@@ -7,5 +7,4 @@ namespace cipher {
 	bool checkIfUppercase(char _charToCheck);
 	bool checkIfLowercase(char _charToCheck);
 	char bound(char _charToCheck, char _left, char _right);
-};
-
+}
